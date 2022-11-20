@@ -1,0 +1,97 @@
+{
+  "name": "ecommerce",
+  "version": "0.0.1",
+  "author": {
+    "name": "Paulo Dantas",
+    "url": "https://portfolio-paulodantas-dev.vercel.app/"
+  },
+  "scripts": {
+    "build": "npm run typecheck && vite build",
+    "commit": "git-cz",
+    "dev": "vite",
+    "format": "prettier . --write --ignore-path .gitignore && git update-index --again",
+    "lint": "eslint . --ext .ts,.tsx --fix --ignore-path .gitignore",
+    "prepare": "husky install",
+    "serve": "npm run build && vite preview --port 3000",
+    "test:e2e": "start-server-and-test serve http://127.0.0.1:3000/ 'cypress open'",
+    "test:e2e:ci": "start-server-and-test serve http://127.0.0.1:3000/ 'cypress run'",
+    "test:unit": "jest --watch",
+    "test:unit:ci": "jest",
+    "test:unit:coverage": "jest --silent --watchAll=false --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "*.{css,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "eslint",
+      "prettier --write"
+    ],
+    "package.json": "npx sort-package-json"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "*",
+    "date-fns": "*",
+    "phosphor-react": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-redux": "*",
+    "react-router-dom": "*"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "*",
+    "@commitlint/config-conventional": "*",
+    "@commitlint/cz-commitlint": "*",
+    "@cypress/vite-dev-server": "*",
+    "@testing-library/jest-dom": "*",
+    "@testing-library/react": "*",
+    "@testing-library/user-event": "*",
+    "@types/cypress": "*",
+    "@types/jest": "*",
+    "@types/node": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "*",
+    "@vitejs/plugin-legacy": "*",
+    "@vitejs/plugin-react": "*",
+    "autoprefixer": "*",
+    "commitizen": "*",
+    "cypress": "*",
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-import-resolver-typescript": "*",
+    "eslint-plugin-cypress": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-jest": "*",
+    "eslint-plugin-jest-dom": "*",
+    "eslint-plugin-jsx-a11y": "*",
+    "eslint-plugin-prettier": "*",
+    "eslint-plugin-react": "*",
+    "eslint-plugin-react-hooks": "*",
+    "eslint-plugin-simple-import-sort": "*",
+    "eslint-plugin-tailwindcss": "*",
+    "eslint-plugin-testing-library": "*",
+    "husky": "*",
+    "identity-obj-proxy": "*",
+    "jest": "*",
+    "jest-environment-jsdom": "*",
+    "jest-junit": "*",
+    "lint-staged": "*",
+    "postcss": "*",
+    "prettier": "*",
+    "sort-package-json": "*",
+    "start-server-and-test": "*",
+    "tailwindcss": "*",
+    "terser": "*",
+    "ts-jest": "*",
+    "typescript": "*",
+    "vite": "*"
+  }
+}
